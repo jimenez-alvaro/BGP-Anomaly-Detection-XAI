@@ -4,13 +4,13 @@ This repository contains the code, data extraction pipelines, and Machine Learni
 
 The project empirically evaluates and demonstrates a paradigm shift in network security: proving that extracting structural/topological features (using mathematical graphs) from BGP traffic yields a fundamentally superior detection space compared to traditional volumetric message counting, effectively detecting silent Outages and subtle Hijacks that standard models miss.
 
-## 🧠 Key Highlights
+## Key Highlights
 * **Dual Pipeline Comparison:** Direct empirical comparison between Volumetric features (message counts) and Topological features (PageRank, assortativity, centrality).
 * **Robust ML Evaluation:** Utilizes XGBoost, Random Forest, MLP, and Logistic Regression with Stratified K-Fold cross-validation to prevent data leakage.
 * **Event-Isolated Z-Score:** Implements a strict normalization methodology to isolate anomalous traffic from background noise and mitigate the 'Year Effect'.
 * **Explainable AI (XAI):** Uses SHAP (SHapley Additive exPlanations) to mathematically deconstruct the model's decision logic, proving that graph deformation (specifically PageRank) is the true signature of BGP anomalies.
 
-## 📂 Repository Structure
+## Repository Structure
 
 The workflow is divided into 5 main scripts that must be executed sequentially:
 
@@ -20,7 +20,7 @@ The workflow is divided into 5 main scripts that must be executed sequentially:
 4. 4_shap_explainability.py: Trains the final XGBoost topological model and applies SHAP TreeExplainer to generate global and local feature importance plots, providing full transparency into the algorithm's decisions.
 5. 5_confusion_matrix.py: Dedicated visualization script that generates high-resolution, publication-ready Confusion Matrix heatmaps (PDF) for both paradigms, ensuring the exact same data partition used in the SHAP analysis.
 
-## ⚙️ Requirements & Installation
+## Requirements & Installation
 
 The code is written in Python 3.x. To install the required dependencies, run the following command in your terminal:
 
@@ -28,7 +28,7 @@ The code is written in Python 3.x. To install the required dependencies, run the
 
 *(Note: The BML framework for data extraction requires specific system dependencies. Refer to the official BML documentation if you intend to re-run the 1_data_extraction.py script).*
 
-## 🚀 How to Run
+## How to Run
 
 1. Ensure the generated datasets (volumen_rrc04.csv, grafos_rrc04.csv, etc.) are placed inside a folder named dataset_csvs/ in the root directory.
 
@@ -43,5 +43,5 @@ The code is written in Python 3.x. To install the required dependencies, run the
 
 The scripts will automatically output high-resolution .pdf and .png figures directly into the root folder.
 
-## 📝 License
+## License
 This project was developed as a Bachelor's Thesis. Feel free to explore, fork, and use the code for academic or research purposes.
